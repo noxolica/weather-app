@@ -20,6 +20,8 @@ searchBox.addListener("places_changed", () => {
       longitude, longitude
     })
   }).then(res => res.json()).then(data => {
-    setWeather(data, place.formatted_address)
+    // setWeather(data, place.formatted_address)
+    console.log(data);
+
   })
 })
