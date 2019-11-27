@@ -41,6 +41,11 @@ updateDisplay = (data, location) => {
   const locationNode = document.querySelector('[data-location]')
 
   weatherNode.textContent = data.summary
+  weatherNode.classList.remove("has-text-grey-light")
+
   temperatureNode.textContent = `${data.temperature} °C`
+  temperatureNode.classList.remove("has-text-grey-light")
+
   locationNode.textContent = location
+  locationNode.classList.remove("has-text-grey-light")
 }
