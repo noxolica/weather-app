@@ -1,8 +1,13 @@
-const searchElement = document.querySelector('[data-search-city')
-const searchBox = new google.maps.places.SearchBox(searchElement)
+const searchElement = document.querySelector('[data-search-city]')
+const options = {
+  types: ["(cities)"]
+}
 
-searchBox.addListener("places_changed", () => {
-  const place = searchBox.getPlaces()[0]
+const searchBox = new google.maps.places.Autocomplete(searchElement, options)
+
+google.maps.event.addListener(searchBox, "place_changed", () => {
+
+  const place = searchBox.getPlace()
   if (place === null) {
     return
   }
@@ -22,6 +27,5 @@ searchBox.addListener("places_changed", () => {
   }).then(res => res.json()).then(data => {
     // setWeather(data, place.formatted_address)
     console.log(data);
-
   })
 })
