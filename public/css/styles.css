@@ -1,0 +1,26 @@
+.container {
+  padding: 10em 2em;
+  text-align: center;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.data-record {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .data-container {
+    flex-direction: column;
+  }
+}
